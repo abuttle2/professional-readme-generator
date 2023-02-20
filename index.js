@@ -1,16 +1,37 @@
 const fs = require('fs');
+const path = require('path');
 const inquirer = require('inquirer');
+const generateReadme = require("./utils/generateReadme.js");
 
-//Test question
-inquirer.prompt([
+const questions = [
     {
         type: 'input',
         name: 'title',
         message: 'What is the title of your project?',
     },
-]).then((answers) => {
-    // Generate README file based on the users answers
-    fs.writeFile('README.md', answers.title, (error) => {
-        error ? console.error(error) : console.log('Generated README File!');
+    {
+        type: "input",
+        name: "description",
+        message: "Please provide a description for the project:",
+    }];
+
+// function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (error) => {
+        error ? console.error(error) : console.log("README file has been generated!");
     });
-}).catch((error) => console.log(error));
+}
+
+// function to initialize program
+function init() {
+    inquirer.prompt(questions).then((answers) => {
+        const readme = generateReadme(answers);
+        const fileName = "README.md";
+        const filePath = path.join(process.cwd(), fileName);
+        writeToFile(filePath, readme);
+        console.log(filePath)
+    });
+}
+
+// function call to initialize program
+init();
