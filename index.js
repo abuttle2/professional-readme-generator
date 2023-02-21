@@ -13,6 +13,17 @@ const questions = [
         type: "input",
         name: "description",
         message: "Please provide a description for the project:",
+    },
+    {
+        type: 'confirm',
+        name: 'tableOfContents',
+        message: 'Would you like to include a table of contents?',
+    },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Choose a license for your project:',
+        choices: ['MIT', 'Apache', 'GPL', 'BSD', 'None'],
     }];
 
 // function to write README file
