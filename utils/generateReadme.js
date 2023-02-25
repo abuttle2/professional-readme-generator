@@ -6,6 +6,7 @@ function generateReadme(data) {
 
   ${data.tableOfContents ? `
   ## Table of Contents
+  - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
   - [License](#license)
@@ -31,11 +32,11 @@ function generateReadme(data) {
   ${data.tests}
 
   ## Questions
-  If you have any questions, please contact me through the following links: 
+  If you have any questions, please contact me from the following links: 
 
-  - Github:  ${data.github}
-  - Email: ${data.email}
-  - Project URL: ${data.url};
+  - GitHub: [${data.github}](https://github.com/${data.github})
+  - Email: [${data.email}](mailto:${data.email})
+  - Project URL: [${data.url}](${data.url})
 `;
 }
 
