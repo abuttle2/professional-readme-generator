@@ -20,15 +20,50 @@ const questions = [
         message: 'Would you like to include a table of contents?',
     },
     {
+        type: 'input',
+        name: 'installation',
+        message: 'What are the installation instructions for your project?',
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'What are the usage instructions for your project?',
+    },
+    {
         type: 'list',
         name: 'license',
         message: 'Choose a license for your project:',
         choices: ['MIT', 'Apache', 'GPL', 'BSD', 'None'],
+    },
+    {
+        type: 'input',
+        name: 'contributing',
+        message: 'What are the contribution guidelines for your project?',
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'What are the test instructions for your project?',
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'What is your GitHub username?',
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email address?',
+    },
+    {
+        type: 'input',
+        name: 'url',
+        message: 'What is the project URL?',
     }];
 
 // function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (error) => {
+    fs.writeFile(fileName, data, "utf8", (error) => {
         error ? console.error(error) : console.log("README file has been generated!");
     });
 }
