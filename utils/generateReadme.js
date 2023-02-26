@@ -1,5 +1,12 @@
 function generateReadme(data) {
+  let badge = "";
+  if (data.license != "None") {
+    badge = `![License](https://img.shields.io/badge/license-${data.license}-red.svg)`
+  }
+
   return `# ${data.title}
+
+  ${badge}
 
   ## Description
   ${data.description}
@@ -23,7 +30,9 @@ function generateReadme(data) {
   ${data.usage}
 
   ## License
-  This project uses the ${data.license} license.
+
+  This project uses the following license:
+   ${data.license}
 
   ## Contributing
   ${data.contributing}
