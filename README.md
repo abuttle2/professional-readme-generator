@@ -6,9 +6,14 @@
 
 This is a Node.js application that generates a README file in the current working directory, by prompting the user with a series of questions.
 
+## Demo
+
+[https://www.youtube.com/watch?v=eq6ZCbYaqGc](https://www.youtube.com/watch?v=eq6ZCbYaqGc)
+
 ## Table of Contents
 
 - [Description](#description)
+- [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
